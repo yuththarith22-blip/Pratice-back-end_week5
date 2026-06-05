@@ -6,7 +6,7 @@ import ArticleFilterByJournalist from './components/ArticleFilterByJournalist';
 function App() {
   return (
     <div style={{ padding: '20px' }}>
-      <h1>📰 News Article Filter</h1>
+      <h1> News Article Filter</h1>
       <nav style={{ marginBottom: '20px', display: 'flex', gap: '10px' }}>
         <Link to="/filter-by-category">Article Filter by category</Link>
         <Link to="/filter-by-journalist">Article Filter by journalist</Link>
