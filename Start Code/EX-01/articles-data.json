@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title": "Getting Started with Local News",
+    "content": "This is a seed article provided by the local API.",
+    "journalistId": 101,
+    "categoryId": 201
+  },
+  {
+    "id": 2,
+    "title": "React Client and Article CRUD",
+    "content": "The EX-01 client now has a working local backend.",
+    "journalistId": 102,
+    "categoryId": 202
+  },
+  {
+    "id": 3,
+    "title": "21",
+    "content": "1",
+    "journalistId": 1,
+    "categoryId": 1
+  },
+  {
+    "id": 4,
+    "title": "1",
+    "content": "11",
+    "journalistId": 1,
+    "categoryId": 1
+  }
+]
