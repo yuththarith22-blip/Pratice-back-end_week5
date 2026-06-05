@@ -1,7 +1,10 @@
 import { useState } from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 export default function ArticleForm() {
+  const navigate = useNavigate();
+  const apiBaseUrl = 'http://localhost:5000';
   const [form, setForm] = useState({
     title: '',
     content: '',
@@ -15,19 +18,28 @@ export default function ArticleForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Validate form data
+    try {
+      const payload = {
+        ...form,
+        journalistId: Number(form.journalistId),
+        categoryId: Number(form.categoryId),
+      };
+
+      await axios.post(`${apiBaseUrl}/articles`, payload);
+      navigate('/');
+    } catch (submitError) {
+      console.error(submitError);
+      alert('Unable to create article. Please check the API server.');
+    }
   };
 
   return (
-
     <div>
-      {/* Navigation Links */}
       <nav style={{ marginBottom: '20px' }}>
-        <Link to="/" style={{ marginRight: '10px' }}>📄 View Articles</Link>
-        <Link to="/add"> ➕ Add Article</Link>
+        <Link to="/">📄 View Articles</Link>
       </nav>
 
-      <h2>Articles</h2>
+      <h2>Add Article</h2>
       <form onSubmit={handleSubmit}>
         <h3>Add New Article</h3>
         <input name="title" value={form.title} onChange={handleChange} placeholder="Title" required /><br />

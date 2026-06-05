@@ -6,11 +6,18 @@ import ArticleViewer from './components/ArticleViewer';
 
 function App() {
   return (
-    <div style={{ padding: '20px' }}>
-      <h1>📰 News Article Management</h1>
+    <div style={{ maxWidth: '960px', margin: '0 auto', padding: '24px 16px 48px' }}>
+      <header style={{ marginBottom: '24px' }}>
+        <h1 style={{ marginBottom: '8px' }}>News Article Management</h1>
+        <p style={{ marginTop: 0, color: '#666' }}>
+          Browse articles, create new stories, and update existing content through the REST API.
+        </p>
+        <nav style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+          <Link to="/">Articles</Link>
+          <Link to="/add">Add Article</Link>
+        </nav>
+      </header>
 
-  
-      {/* Routes */}
       <Routes>
         <Route path="/" element={<ArticleList />} />
         <Route path="/add" element={<CreateArticleForm />} />
